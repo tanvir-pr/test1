@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 // Replace these with your own name and Neptun code before the exam check
-const studentName = "YOUR NAME";
+const studentName = "Tanvir Hasan";
 const neptunCode = "NEPTUN";
 
 app.use(express.urlencoded({ extended: true }));
