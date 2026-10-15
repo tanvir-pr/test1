@@ -15,32 +15,34 @@ function header() {
 function formPage() {
     return `
         ${header()}
-        <form action="/page1" method="POST">
+        <form action="/exercise" method="POST">
             Name: <input type="text" name="name"><br>
-            City:
-            <select name="city">
-                <option value="Budapest">Budapest</option>
-                <option value="Madrid">Madrid</option>
-                <option value="Berlin">Berlin</option>
-                <option value="London">London</option>
-                <option value="Paris">Paris</option>
+            Address: <input type="text" name="address"><br>
+            Country:
+            <select name="country">
+                <option value="Hungary">Hungary</option>
+                <option value="Poland">Poland</option>
+                <option value="Austria">Austria</option>
+                <option value="Italy">Italy</option>
             </select><br>
             <button type="submit">Send</button>
         </form>
     `;
 }
 
-app.get("/page1", (req, res) => {
+app.get("/exercise", (req, res) => {
     res.send(formPage());
 });
 
-app.post("/page1", (req, res) => {
+app.post("/exercise", (req, res) => {
     const name = req.body.name;
-    const city = req.body.city;
+    const address = req.body.address;
+    const country = req.body.country;
     res.send(`
         ${header()}
         Name: ${name}<br>
-        City: ${city}<br>
+        Address: ${address}<br>
+        Country: ${country}<br>
     `);
 });
 
